@@ -1,0 +1,32 @@
+How To Hide And Show Elementor Widgets On Click
+https://mykeyelements.com/how-to-hide-and-show-widgets-on-click/
+
+
+#hiddenBlock {
+    display: none;
+}
+
+
+jQuery(document).ready(function( $ ){
+
+   $('#showBlock').click(function(e) {
+   $('#hiddenBlock').toggle("slow");
+
+   e.preventDefault(); 
+ });
+});
+
+
+jQuery(document).ready(function( $ ){
+    
+  var hbtn = $(".showBlock");
+  var hcon = $(".hiddenBlock");
+  
+   hcon.hide();
+   hbtn.click(function(e) {
+   var index = hbtn.index(this) 
+   $(hcon).eq(index).slideToggle("slow");
+
+   e.preventDefault();     
+    });
+});
